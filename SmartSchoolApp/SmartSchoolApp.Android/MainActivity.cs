@@ -20,10 +20,12 @@ namespace SmartSchoolApp.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
             base.OnCreate(savedInstanceState);
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CarouselViewRenderer.Init();
             UserDialogs.Init(() => (this));
             LoadApplication(new App());
         }
+
     }
 }
