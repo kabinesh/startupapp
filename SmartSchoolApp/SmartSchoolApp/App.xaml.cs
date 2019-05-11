@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using SmartSchoolApp.Views;
+using Acr.UserDialogs;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace SmartSchoolApp
@@ -12,9 +13,7 @@ namespace SmartSchoolApp
         public App()
         {
             InitializeComponent();
-
-
-            MainPage = new MainPage();
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()

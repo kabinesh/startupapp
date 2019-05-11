@@ -15,12 +15,13 @@ namespace SmartSchoolApp.ViewModels
             _navigation = navigation;
         }
 
-        public ICommand RegisterCommand
+        public ICommand LoginCommand
         {
             get
             {
                 return new Command(() => {
-                    _navigation.PushAsync(new SignupPage());
+
+                    Application.Current.MainPage = new MainPage();
                 });
             }
         }
