@@ -5,7 +5,17 @@
              Title="Group Message">
     <ContentPage.Content>
         <StackLayout Style="{StaticResource Wrapper}">
-            <Frame BorderColor="Yellow" Padding="0" Margin="0">
+            <!--<ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+
+            <Frame Style="{StaticResource GroupMessageBorder}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -20,13 +30,14 @@
 
                         <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
                         <StackLayout Grid.Column="1">
-                            <Label Text="Holiday Tomorrow" FontFamily="{StaticResource SemiBoldFont}"></Label>
-                            <Label Text="@May-11-2019 by Sathana"/>
+                            <Label Text="Holiday Tomorrow" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
+                            <Label Text="@May-11-2019 by Sathana" TextColor="White"/>
                         </StackLayout>
                     </Grid>
                     <Label Grid.Row="1" Style="{StaticResource GroupMessageDescription}" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." MaxLines="1000"></Label>
                 </Grid>
             </Frame>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

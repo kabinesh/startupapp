@@ -5,7 +5,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <!--Global Styles-->
-            <Color x:Key="NavigationPrimary">#4AC29A</Color>
+            <Color x:Key="NavigationPrimary">#673ab7</Color>
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="BarTextColor" Value="White" />
@@ -33,9 +33,15 @@
                 <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans"/>
             </OnPlatform>
 
+            <Style x:Key="GroupMessageBorder" TargetType="Frame">
+                <Setter Property="BorderColor" Value="#9a67ea"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+            
             <Style x:Key="GroupMessageHeaderGrid" TargetType="Grid">
                 <Setter Property="Padding" Value="5"/>
-                <Setter Property="BackgroundColor" Value="Yellow"></Setter>
+                <Setter Property="BackgroundColor" Value="#9a67ea"></Setter>
             </Style>
 
             <Style TargetType="Label">
