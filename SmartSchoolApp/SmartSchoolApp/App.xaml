@@ -10,6 +10,34 @@
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
+            
+            <Style x:Key="Wrapper" TargetType="StackLayout">
+                <Setter Property="Padding" Value="5"/>
+            </Style>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="RegularFont">
+                <On Platform="Android" Value="OpenSans-Regular.ttf#Open Sans"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="SemiBoldFont">
+                <On Platform="Android" Value="OpenSans-SemiBold.ttf#Open Sans"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="BoldFont">
+                <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans"/>
+            </OnPlatform>
+
+            <Style x:Key="GroupMessageHeaderGrid" TargetType="Grid">
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="BackgroundColor" Value="Yellow"></Setter>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="RegularFont"/>
+            </Style>
+
+            <Style x:Key="GroupMessageDescription" TargetType="Label">
+                <Setter Property="Margin" Value="5"/>
+                
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

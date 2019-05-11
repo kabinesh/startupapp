@@ -1,12 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartSchoolApp.Views.GroupMessage">
+             x:Class="SmartSchoolApp.Views.GroupMessage"
+             Title="Group Message">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Style="{StaticResource Wrapper}">
+            <Frame BorderColor="Yellow" Padding="0" Margin="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" Style="{StaticResource GroupMessageHeaderGrid}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
+                        <StackLayout Grid.Column="1">
+                            <Label Text="Holiday Tomorrow" FontFamily="{StaticResource SemiBoldFont}"></Label>
+                            <Label Text="@May-11-2019 by Sathana"/>
+                        </StackLayout>
+                    </Grid>
+                    <Label Grid.Row="1" Style="{StaticResource GroupMessageDescription}" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." MaxLines="1000"></Label>
+                </Grid>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
