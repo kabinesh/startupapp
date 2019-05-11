@@ -44,6 +44,10 @@ namespace SmartSchoolApp.Views
                     case (int)MenuItemType.GroupMessage:
                         MenuPages.Add(id, new NavigationPage(new GroupMessage()));
                         break;
+
+                    case (int)MenuItemType.Gallery:
+                        MenuPages.Add(id, new NavigationPage(new GalleryPage()));
+                        break;
                 }
             }
 
