@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartSchoolApp.Views.HomePage"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             Title="Smart School"
+             x:Name="BrowseItemsPage">
+  <ContentPage.Content>
+    <StackLayout>
+      <cv:CarouselViewControl x:Name="carousel"
+        ShowArrows="true"
+        ShowIndicators="true"
+        ItemsSource="{Binding SlideShowSource}"
+        Orientation="Horizontal">
+
+        <!--<cv:CarouselViewControl.ItemsSource>
+           <x:Array Type="{x:Type View}">
+                <ScrollView>
+                    <StackLayout>
+                        <Image Source="blackbord.jpg" Aspect="AspectFill" />
+                        <Image Source="writing.jpg" Aspect="AspectFill" />
+                        <Image Source="group.jpg" Aspect="AspectFill" />
+                      <Image Source="playing.jpg" Aspect="AspectFill" />
+                      <Image Source="back_to_school.jpg" Aspect="AspectFill" />
+                    </StackLayout>
+                </ScrollView>
+           </x:Array>
+        </cv:CarouselViewControl.ItemsSource>-->
+
+      </cv:CarouselViewControl>
+
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

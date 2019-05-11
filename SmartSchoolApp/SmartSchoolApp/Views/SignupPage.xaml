@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartSchoolApp.Views.SignupPage"
+             Title="SignUp">
+    <ContentPage.Content>
+        <Grid Padding="20" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Entry Placeholder="Student Name" Grid.Row="0"/>
+            <Picker Title="Select School" Grid.Row="1" ItemsSource="{Binding Schools}" ItemDisplayBinding="{Binding Name}" SelectedIndex="{Binding SelectedSchoolIndex}"/>
+            <Entry Placeholder="Roll Number" Grid.Row="2" Keyboard="Numeric"/>
+            <Entry Placeholder="Password" IsPassword="True" Grid.Row="3" />
+            <Entry Placeholder="Confirm Password" IsPassword="True" Grid.Row="4"/>
+            <Button Text="Signup" Grid.Row="5" HorizontalOptions="End"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
