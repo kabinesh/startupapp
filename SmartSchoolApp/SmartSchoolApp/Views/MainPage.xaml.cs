@@ -42,6 +42,9 @@ namespace SmartSchoolApp.Views
                     case (int)MenuItemType.Logout:
                         MenuPages.Add(id, new NavigationPage(new HomePage()));
                         break;
+                    case (int)MenuItemType.GroupMessage:
+                        MenuPages.Add(id, new NavigationPage(new GroupMessage()));
+                        break;
                 }
             }
 

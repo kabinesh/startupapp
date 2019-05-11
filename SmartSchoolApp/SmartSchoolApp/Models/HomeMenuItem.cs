@@ -10,7 +10,8 @@ namespace SmartSchoolApp.Models
         Notifications,
         EventCalendar,
         Logout,
-        Login
+        Login,
+        GroupMessage
     }
     public class HomeMenuItem
     {
