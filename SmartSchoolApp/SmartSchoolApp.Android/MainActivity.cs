@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using CarouselView.FormsPlugin.Android;
+using Acr.UserDialogs;
+using Xamarin.Forms;
 
 namespace SmartSchoolApp.Droid
 {
@@ -20,6 +22,7 @@ namespace SmartSchoolApp.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CarouselViewRenderer.Init();
+            UserDialogs.Init(() => (this));
             LoadApplication(new App());
         }
     }
