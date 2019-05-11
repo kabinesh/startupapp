@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Event Gallery"
+             x:Class="SmartSchoolApp.Views.GalleryPage">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding EventsGallery}" SelectedItem="{Binding SelectedEvent}" HasUnevenRows="True" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="0,0,0,10" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="250" Grid.RowSpan="2" Source="{Binding Photo}" Aspect="AspectFit"/>
+                            <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" BackgroundColor="Gray" Opacity="0.7" VerticalOptions="FillAndExpand"/>
+                            <Label VerticalTextAlignment="Center" TextColor="White" Text="{Binding Name}" Grid.Row="1" Grid.Column="1"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

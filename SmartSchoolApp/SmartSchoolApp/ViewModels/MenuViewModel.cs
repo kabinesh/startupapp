@@ -24,6 +24,7 @@ namespace SmartSchoolApp.ViewModels
             {
                 new HomeMenuItem {Id = MenuItemType.SchoolInfo, Title="Home" },
                 new HomeMenuItem {Id= MenuItemType.GroupMessage, Title="Group Message"},
+                new HomeMenuItem {Id= MenuItemType.Gallery, Title="Gallery"},
                 new HomeMenuItem {Id = MenuItemType.EventCalendar, Title="Event Calendar" },
                 new HomeMenuItem {Id = MenuItemType.Notifications,Title="Notifications"},
                 new HomeMenuItem {Id = MenuItemType.Logout, Title= "Logout"},
