@@ -1,5 +1,4 @@
-﻿using Acr.UserDialogs;
-using SmartSchoolApp.Models;
+﻿using SmartSchoolApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -34,13 +33,18 @@ namespace SmartSchoolApp.Views
                     case (int)MenuItemType.EventCalendar:
                         MenuPages.Add(id, new NavigationPage(new EventCalendarPage()));
                         break;
+                    case (int)MenuItemType.Login:
+                        MenuPages.Add(id, new NavigationPage(new LoginPage()));
+                        break;
                     case (int)MenuItemType.Notifications:
                         MenuPages.Add(id, new NavigationPage(new NotificationsPage()));
                         break;
                     case (int)MenuItemType.Logout:
-                        Application.Current.MainPage = new LoginPage();
-                        UserDialogs.Instance.Toast("You have been logged out successfully");
-                        return;
+                        MenuPages.Add(id, new NavigationPage(new HomePage()));
+                        break;
+                    case (int)MenuItemType.GroupMessage:
+                        MenuPages.Add(id, new NavigationPage(new GroupMessage()));
+                        break;
                 }
             }
 
