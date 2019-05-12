@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SmartSchoolApp.Interface
 {
-    [Headers("Content-Type", "x-www-form-urlencoded")]
+    [Headers("Content-Type","application/json")]
     public interface IRestApi
     {
         [Get("/GetEvents")]
