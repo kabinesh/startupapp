@@ -6,8 +6,8 @@
         <Label Text="Smart School" FontSize="35" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
         <Label Text="Login" FontSize="28" HorizontalOptions="Center"/>
         <BoxView Color="Transparent" HeightRequest="20" HorizontalOptions="FillAndExpand"/>
-        <Entry Placeholder="Username"  PlaceholderColor="gray" />
-        <Entry Placeholder="Password"  PlaceholderColor="gray" IsPassword="True" />
+        <Entry Placeholder="Username" Text="{Binding Path=LoginUser.UserName}" PlaceholderColor="gray" />
+        <Entry Placeholder="Password" Text="{Binding Path=LoginUser.Password}"  PlaceholderColor="gray" IsPassword="True" />
         <Button Text="Login" Command="{Binding LoginCommand}" CornerRadius="5"/>
     </StackLayout>
         
