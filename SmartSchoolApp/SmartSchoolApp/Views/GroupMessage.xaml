@@ -5,39 +5,36 @@
              Title="Group Message">
     <ContentPage.Content>
         <StackLayout Style="{StaticResource Wrapper}">
-            <!--<ListView>
+            <ListView ItemsSource="{Binding GroupMessages}" Style="{StaticResource GroupMessageListView}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            
+                            <Frame Style="{StaticResource GroupMessageBorder}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Grid.Row="0" Style="{StaticResource GroupMessageHeaderGrid}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
+                                        <StackLayout Grid.Column="1">
+                                            <Label Text="{Binding Title}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
+                                            <Label Text="{Binding  PublishedInfo}" TextColor="White"/>
+                                        </StackLayout>
+                                    </Grid>
+                                    <Label Grid.Row="1" Style="{StaticResource GroupMessageDescription}" Text="{Binding Message}" MaxLines="1000"></Label>
+                                </Grid>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>-->
-
-            <Frame Style="{StaticResource GroupMessageBorder}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-
-                    <Grid Grid.Row="0" Style="{StaticResource GroupMessageHeaderGrid}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
-                        <StackLayout Grid.Column="1">
-                            <Label Text="Holiday Tomorrow" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
-                            <Label Text="@May-11-2019 by Sathana" TextColor="White"/>
-                        </StackLayout>
-                    </Grid>
-                    <Label Grid.Row="1" Style="{StaticResource GroupMessageDescription}" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." MaxLines="1000"></Label>
-                </Grid>
-            </Frame>
-
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
