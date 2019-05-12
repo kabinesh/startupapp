@@ -37,6 +37,12 @@ namespace SmartSchoolApp.ViewModels
         {
             try
             {
+                if (string.IsNullOrEmpty(LoginUser.UserName) || string.IsNullOrEmpty(LoginUser.Password))
+                {
+                    ShowToastMessage("Please enter mandatory fields");
+                    return;
+                }
+
                 UserDialogs.Instance.ShowLoading("Please wait....");
 
                 var loginResponse = await _restApi.Login(LoginUser);
@@ -44,11 +50,13 @@ namespace SmartSchoolApp.ViewModels
                 if(loginResponse.Status=="failed")
                 {
                     HideLoading();
-                    UserDialogs.Instance.Toast(loginResponse.Message);
+                    ShowToastMessage(loginResponse.Message);
                 }
                 else
                 {
+                    LoginUser = null;
                     App.Current.MainPage = new MainPage();
+                    ShowToastMessage("You have been logged in successfully");
                 }
             }
             catch(Exception ex)
@@ -64,6 +72,11 @@ namespace SmartSchoolApp.ViewModels
         private void HideLoading()
         {
             UserDialogs.Instance.HideLoading();
+        }
+
+        private void ShowToastMessage(string message)
+        {
+            UserDialogs.Instance.Toast(message);
         }
     }
 }

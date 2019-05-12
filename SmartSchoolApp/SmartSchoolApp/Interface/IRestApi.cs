@@ -14,7 +14,7 @@ namespace SmartSchoolApp.Interface
         [Get("/GetEvents")]
         Task<Event> GetAllEvents();
 
-        [Get("/user/login")]
-        Task<LoginResponse> Login(User user);
+        [Post("/user/login")]
+        Task<LoginResponse> Login([Body] User user);
     }
 }
