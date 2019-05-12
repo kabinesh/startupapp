@@ -2266,6 +2266,7 @@ namespace SmartSchoolApp.Droid
 			global::Com.ViewPagerIndicator.Resource.Styleable.CirclePageIndicator_vpiStrokeWidth = global::SmartSchoolApp.Droid.Resource.Styleable.CirclePageIndicator_vpiStrokeWidth;
 			global::Com.ViewPagerIndicator.Resource.Styleable.ViewPagerIndicator = global::SmartSchoolApp.Droid.Resource.Styleable.ViewPagerIndicator;
 			global::Com.ViewPagerIndicator.Resource.Styleable.ViewPagerIndicator_vpiCirclePageIndicatorStyle = global::SmartSchoolApp.Droid.Resource.Styleable.ViewPagerIndicator_vpiCirclePageIndicatorStyle;
+			global::ModernHttpClient.Resource.String.library_name = global::SmartSchoolApp.Droid.Resource.String.library_name;
 			global::Splat.Resource.String.library_name = global::SmartSchoolApp.Droid.Resource.String.library_name;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::SmartSchoolApp.Droid.Resource.Attribute.actionBarSize;
 		}

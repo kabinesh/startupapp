@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+   HasSystemPadding="True"
+    CloseWhenBackgroundIsClicked="True"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    x:Class="SmartSchoolApp.Views.Popup.EventDetailPage">
+    <Frame CornerRadius="5" Padding="0" Margin="10" VerticalOptions="CenterAndExpand">
+        <ScrollView>
+            <Grid RowSpacing="10" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Path=SelectedEvent.Photo}"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+                <Label Text="X" x:Name="close" FontSize="35" Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="End"/>
+           
+                <Label FontAttributes="Bold" Text="{Binding Path=SelectedEvent.Name}" Grid.Row="2" Grid.Column="1"/>
+
+                <Label Text="{Binding Path=SelectedEvent.Description}" Grid.Row="3" Grid.Column="1"/>
+            </Grid>
+        </ScrollView>
+    </Frame>
+</pages:PopupPage>

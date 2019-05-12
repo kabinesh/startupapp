@@ -17,7 +17,7 @@ namespace SmartSchoolApp.Views
 		{
 			InitializeComponent ();
 
-            BindingContext = new LoginViewModel(this.Navigation);
+            BindingContext = App.Locator.Login;
 		}
 	}
 }

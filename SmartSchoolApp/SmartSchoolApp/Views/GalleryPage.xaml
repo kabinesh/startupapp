@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Event Gallery"
+             xmlns:local="clr-namespace:SmartSchoolApp.CustomViews"
              x:Class="SmartSchoolApp.Views.GalleryPage">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding EventsGallery}" SelectedItem="{Binding SelectedEvent}" HasUnevenRows="True" SeparatorVisibility="None">
+        <local:CustomListView ItemsSource="{Binding EventsGallery}" ItemClickCommand="{Binding ItemClickCommand}"  SelectedItem="{Binding SelectedEvent}" HasUnevenRows="True" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -25,6 +26,6 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </local:CustomListView>
     </ContentPage.Content>
 </ContentPage>
