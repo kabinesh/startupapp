@@ -11,6 +11,7 @@ namespace SmartSchoolApp.Services
         public ViewModelLocator()
         {
             SimpleIoc.Default.Register<LoginViewModel>();
+            SimpleIoc.Default.Register<ManageGroupMessageViewModel>();
         }
 
         public LoginViewModel Login
@@ -20,6 +21,15 @@ namespace SmartSchoolApp.Services
                 return SimpleIoc.Default.GetInstance<LoginViewModel>();
             }
         }
+
+        public ManageGroupMessageViewModel ManageGroupMessage
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<ManageGroupMessageViewModel>();
+            }
+        }
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels  

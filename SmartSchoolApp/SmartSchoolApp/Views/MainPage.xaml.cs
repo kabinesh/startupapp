@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using SmartSchoolApp.Models;
+using SmartSchoolApp.Views.Admin;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -48,6 +49,10 @@ namespace SmartSchoolApp.Views
                     case (int)MenuItemType.Gallery:
                         MenuPages.Add(id, new NavigationPage(new GalleryPage()));
                         break;
+                    case (int)MenuItemType.ManageGroupMessages:
+                        MenuPages.Add(id, new NavigationPage(new ManageGroupMessages()));
+                        break;
+
                 }
             }
 

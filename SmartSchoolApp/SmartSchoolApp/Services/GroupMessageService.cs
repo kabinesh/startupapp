@@ -18,7 +18,7 @@ namespace SmartSchoolApp.Services
         public GroupMessageService()
         {
             httpClient = new HttpClient();
-            authToken = "co6m1mo3";
+            authToken = "2cqyusgq";
         }
 
         public async Task<ObservableCollection<GroupMessage>> GetGroupMessages()
