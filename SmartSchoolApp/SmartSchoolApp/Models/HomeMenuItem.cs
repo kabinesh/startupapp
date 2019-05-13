@@ -12,7 +12,8 @@ namespace SmartSchoolApp.Models
         Logout,
         Login,
         GroupMessage,
-        Gallery
+        Gallery,
+        ManageGroupMessages
     }
     public class HomeMenuItem
     {

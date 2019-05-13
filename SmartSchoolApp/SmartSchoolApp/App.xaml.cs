@@ -27,7 +27,7 @@ namespace SmartSchoolApp
 
             SetupService();
 
-            MainPage = new LoginPage();
+            MainPage = new MainPage();
         }
 
         public void SetupService()
