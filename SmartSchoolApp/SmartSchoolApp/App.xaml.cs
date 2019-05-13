@@ -8,6 +8,7 @@ using SmartSchoolApp.Helpers;
 using SmartSchoolApp.Interface;
 using SmartSchoolApp.Services;
 using GalaSoft.MvvmLight.Ioc;
+using DLToolkit.Forms.Controls;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace SmartSchoolApp
@@ -21,6 +22,8 @@ namespace SmartSchoolApp
         public App()
         {
             InitializeComponent();
+
+            FlowListView.Init();
 
             SetupService();
 

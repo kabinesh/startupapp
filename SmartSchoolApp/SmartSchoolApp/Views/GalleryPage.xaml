@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Event Gallery"
+             xmlns:flv= "clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              xmlns:local="clr-namespace:SmartSchoolApp.CustomViews"
              x:Class="SmartSchoolApp.Views.GalleryPage">
     <ContentPage.Content>
-        <local:CustomListView ItemsSource="{Binding EventsGallery}" ItemClickCommand="{Binding ItemClickCommand}"  SelectedItem="{Binding SelectedEvent}" HasUnevenRows="True" SeparatorVisibility="None">
+        <!--<local:CustomListView ItemsSource="{Binding EventsGallery}" ItemClickCommand="{Binding ItemClickCommand}"  SelectedItem="{Binding SelectedEvent}" HasUnevenRows="True" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -26,6 +27,25 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </local:CustomListView>
+        </local:CustomListView>-->
+        <flv:FlowListView
+                    FlowItemsSource="{Binding EventsGallery} "
+                    FlowColumnCount="3" 
+                    FlowColumnExpand="First"
+                    SeparatorVisibility="None"
+                    HasUnevenRows="True">
+            <flv:FlowListView.FlowColumnTemplate>
+                <DataTemplate>
+                    <Grid HeightRequest="120">
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="*" />
+                            <RowDefinition  Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0"  Source="{Binding Photo}" />
+                        <Label Grid.Row="1" Text="{Binding Name} " />
+                    </Grid>
+                </DataTemplate>
+            </flv:FlowListView.FlowColumnTemplate>
+        </flv:FlowListView >
     </ContentPage.Content>
 </ContentPage>
