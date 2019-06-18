@@ -3,6 +3,7 @@ using SmartSchoolApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace SmartSchoolApp.Services
 {
@@ -13,6 +14,7 @@ namespace SmartSchoolApp.Services
             SimpleIoc.Default.Register<LoginViewModel>();
             SimpleIoc.Default.Register<ManageGroupMessageViewModel>();
             SimpleIoc.Default.Register<AddEditGroupMessageViewModel>();
+            SimpleIoc.Default.Register<GalleryViewModel>();
         }
 
         public LoginViewModel Login
@@ -36,6 +38,14 @@ namespace SmartSchoolApp.Services
             get
             {
                 return SimpleIoc.Default.GetInstance<AddEditGroupMessageViewModel>();
+            }
+        }
+
+        public GalleryViewModel Gallery
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<GalleryViewModel>();
             }
         }
 

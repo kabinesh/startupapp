@@ -17,7 +17,7 @@ namespace SmartSchoolApp.Views
         {
             InitializeComponent();
 
-            BindingContext = new GalleryViewModel();
+            BindingContext = new GalleryViewModel(this.Navigation);
         }
     }
 }

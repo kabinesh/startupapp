@@ -132,22 +132,54 @@
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
-    <ImageAsset Include="Assets.xcassets\GoogleLogo.png.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\GoogleLogo.png.imageset\GoogleLogo.png" />
-    <ImageAsset Include="Assets.xcassets\GoogleLogo.png.imageset\GoogleLogo-1.png" />
-    <ImageAsset Include="Assets.xcassets\GoogleLogo.png.imageset\GoogleLogo-2.png" />
-    <ImageAsset Include="Assets.xcassets\Image1.png.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Image1.png.imageset\image1.jpg" />
-    <ImageAsset Include="Assets.xcassets\Image1.png.imageset\image1-1.jpg" />
-    <ImageAsset Include="Assets.xcassets\Image1.png.imageset\image1-2.jpg" />
-    <ImageAsset Include="Assets.xcassets\image2.png.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\image2.png.imageset\image2.jpg" />
-    <ImageAsset Include="Assets.xcassets\image2.png.imageset\image2-1.jpg" />
-    <ImageAsset Include="Assets.xcassets\image2.png.imageset\image2-2.jpg" />
-    <ImageAsset Include="Assets.xcassets\Image3.png.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Image3.png.imageset\image3.jpg" />
-    <ImageAsset Include="Assets.xcassets\Image3.png.imageset\image3-1.jpg" />
-    <ImageAsset Include="Assets.xcassets\Image3.png.imageset\image3-2.jpg" />
+    <ImageAsset Include="Assets.xcassets\GoogleLogo.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\GoogleLogo.png.imageset\GoogleLogo.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\GoogleLogo.png.imageset\GoogleLogo-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\GoogleLogo.png.imageset\GoogleLogo-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Image1.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Image1.png.imageset\image1.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Image1.png.imageset\image1-1.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Image1.png.imageset\image1-2.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\image2.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\image2.png.imageset\image2.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\image2.png.imageset\image2-1.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\image2.png.imageset\image2-2.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Image3.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Image3.png.imageset\image3.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Image3.png.imageset\image3-1.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Image3.png.imageset\image3-2.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
