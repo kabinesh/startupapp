@@ -21,5 +21,7 @@ namespace SmartSchoolApp.Models
                 return DateTime.ToShortDateString() + " by " + AuthorName;
             }
         }
+
+        public string AuthToken { get; set; }
     }
 }

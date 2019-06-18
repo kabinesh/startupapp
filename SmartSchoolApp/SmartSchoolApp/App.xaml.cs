@@ -9,6 +9,7 @@ using SmartSchoolApp.Interface;
 using SmartSchoolApp.Services;
 using GalaSoft.MvvmLight.Ioc;
 using DLToolkit.Forms.Controls;
+using SmartSchoolApp.Views.Admin;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace SmartSchoolApp
@@ -18,6 +19,9 @@ namespace SmartSchoolApp
         private static readonly string baseUrl = "http://sms.shanehospitalfurniture.com";
 
         public static IRestApi RestApiService { get; private set; }
+
+        public static MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+
 
         public App()
         {

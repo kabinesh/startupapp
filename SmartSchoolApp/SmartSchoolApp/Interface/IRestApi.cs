@@ -3,12 +3,13 @@ using SmartSchoolApp.Models;
 using SmartSchoolApp.Models.ServiceModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SmartSchoolApp.Interface
 {
-    [Headers("Content-Type","application/json")]
+    [Headers("Content-Type", "application/json")]
     public interface IRestApi
     {
         [Get("/GetEvents")]
@@ -16,5 +17,11 @@ namespace SmartSchoolApp.Interface
 
         [Post("/user/login")]
         Task<LoginResponse> Login([Body] User user);
+
+        [Get("/post/get?AuthToken=62ssqhyw")]
+        Task<GroupMessageResponse> GetGroupMessages();
+
+        [Post("/post/add")]
+        Task<GroupMessageResponse> SaveGroupMessage([Body] GroupMessage groupMessage);
     }
 }

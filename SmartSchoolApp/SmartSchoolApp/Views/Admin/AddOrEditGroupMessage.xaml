@@ -1,12 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartSchoolApp.Views.Admin.AddOrEditGroupMessage">
+             x:Class="SmartSchoolApp.Views.Admin.AddOrEditGroupMessage" 
+             Title="Add Group Message">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Style="{StaticResource Wrapper}">
+            <Entry Text="{Binding GroupMessage.Title}" Placeholder="Title" HeightRequest="30"/>
+            <Editor Text="{Binding GroupMessage.Message}" Placeholder="Message" HeightRequest="100" />
+            <Button Text="Save" Command="{Binding SaveMessage}" Style="{StaticResource ButtonStyle}" CornerRadius="5"/>
         </StackLayout>
     </ContentPage.Content>
-</ContentPage>
+</ContentPage> 

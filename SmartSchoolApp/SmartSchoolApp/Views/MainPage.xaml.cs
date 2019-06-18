@@ -20,7 +20,6 @@ namespace SmartSchoolApp.Views
             MasterBehavior = MasterBehavior.Popover;
 
             MenuPages.Add((int)MenuItemType.SchoolInfo, (NavigationPage)Detail);
-
         }
 
         public async Task NavigateFromMenu(int id)
@@ -52,7 +51,6 @@ namespace SmartSchoolApp.Views
                     case (int)MenuItemType.ManageGroupMessages:
                         MenuPages.Add(id, new NavigationPage(new ManageGroupMessages()));
                         break;
-
                 }
             }
 
@@ -67,6 +65,19 @@ namespace SmartSchoolApp.Views
 
                 IsPresented = false;
             }
+        }
+
+        public async Task PushNavigationPage(Page page)
+        {
+            if (page != null && Detail != page)
+            {
+                await Detail.Navigation.PushAsync(page);
+            }
+        }
+
+        public async Task PopNavigationPage()
+        {
+            await Detail.Navigation.PopAsync();
         }
     }
 }

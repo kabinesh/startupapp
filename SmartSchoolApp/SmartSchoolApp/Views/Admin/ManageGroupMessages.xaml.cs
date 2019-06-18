@@ -27,8 +27,9 @@ namespace SmartSchoolApp.Views.Admin
 
         private async void NavigateToEditGropMessageView(object sender, EventArgs e)
         {
+            var message = (sender as MenuItem).CommandParameter as Models.GroupMessage;
             await Navigation.PushAsync(new AddOrEditGroupMessage());
-            var message = (sender as MenuItem).CommandParameter as GroupMessage;
+
         }
 
         private void DeleteGroupMessage(object sender, EventArgs e)

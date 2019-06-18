@@ -1,4 +1,5 @@
-﻿using SmartSchoolApp.Models;
+﻿using SmartSchoolApp.Interface;
+using SmartSchoolApp.Models;
 using SmartSchoolApp.Services;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace SmartSchoolApp.ViewModels
     public class GroupMessageViewModel : INotifyPropertyChanged
     {
         private GroupMessageService groupMessageService;
+        private IRestApi restApi;
         private ObservableCollection<GroupMessage> groupMessages;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -33,12 +35,21 @@ namespace SmartSchoolApp.ViewModels
         public GroupMessageViewModel()
         {
             groupMessageService = new GroupMessageService();
+            restApi = App.RestApiService;
             GetGroupMessages();
         }
 
         private async Task GetGroupMessages()
         {
-            GroupMessages = await groupMessageService.GetGroupMessages();
+            try
+            {
+                var response = await restApi.GetGroupMessages();
+                GroupMessages = response.PostDetails;
+            }
+            catch (Exception e)
+            {
+
+            }
         }
 
         protected void OnPropertyChanged(string property)

@@ -9,12 +9,14 @@ using Xamarin.Forms.Xaml;
 
 namespace SmartSchoolApp.Views.Admin
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AddOrEditGroupMessage : ContentPage
-	{
-		public AddOrEditGroupMessage ()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class AddOrEditGroupMessage : ContentPage
+    {
+        public AddOrEditGroupMessage()
+        {
+            InitializeComponent();
+
+            BindingContext = App.Locator.AddEditGroupMessage;
+        }
+    }
 }

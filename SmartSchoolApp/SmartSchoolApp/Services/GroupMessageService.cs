@@ -18,18 +18,32 @@ namespace SmartSchoolApp.Services
         public GroupMessageService()
         {
             httpClient = new HttpClient();
-            authToken = "2cqyusgq";
+            authToken = "qg6vbl5y";
         }
 
         public async Task<ObservableCollection<GroupMessage>> GetGroupMessages()
         {
-            var objectDefnition = new { Status ="", PostDetails = new List<GroupMessage>() };
-            var content = await httpClient.GetStringAsync(baseUrl + "/post/get?AuthToken=" + authToken);
-            var data = JsonConvert.DeserializeAnonymousType(content, objectDefnition);
-    
-           
-            ObservableCollection<GroupMessage> groupMessages = new ObservableCollection<GroupMessage>(data.PostDetails);
-            return groupMessages;
+            try
+            {
+                var responseData = new { Status = "", PostDetails = new List<GroupMessage>() };
+
+                var content = await httpClient.GetStringAsync(baseUrl + "/post/get?AuthToken=" + authToken);
+                var data = JsonConvert.DeserializeAnonymousType(content, responseData);
+                if (data.Status == "success")
+                {
+                    ObservableCollection<GroupMessage> groupMessages = new ObservableCollection<GroupMessage>(data.PostDetails);
+
+                    return groupMessages;
+                }
+
+                return null;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+
         }
     }
 }

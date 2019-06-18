@@ -1,7 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SmartSchoolApp.Views.Admin.ManageGroupMessages"
+             x:Name="ManageGroupMessagesPage"
              Title="Manage Group Messages">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Activated="NavigateToAddGropMessageView"/>
@@ -35,8 +36,8 @@
                                 </Grid>
                             </Frame>
                             <ViewCell.ContextActions>
-                                <MenuItem Text="Edit" CommandParameter="{Binding .}" Clicked="NavigateToEditGropMessageView"/>
-                                <MenuItem Text="Delete" CommandParameter="{Binding .}" Clicked="DeleteGroupMessage" IsDestructive="True"/>
+                                <MenuItem Text="Edit" CommandParameter="{Binding .}" Command="{Binding BindingContext.NavigateToEditGropMessageView, Source={x:Reference Name=ManageGroupMessagesPage}}"/>
+                                <MenuItem Text="Delete" CommandParameter="{Binding .}" Command="{Binding DeleteGroupMessage}" IsDestructive="True"/>
                             </ViewCell.ContextActions>
                         </ViewCell>
                     </DataTemplate>

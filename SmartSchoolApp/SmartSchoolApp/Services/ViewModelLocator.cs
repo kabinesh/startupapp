@@ -6,12 +6,13 @@ using System.Text;
 
 namespace SmartSchoolApp.Services
 {
-   public class ViewModelLocator
+    public class ViewModelLocator
     {
         public ViewModelLocator()
         {
             SimpleIoc.Default.Register<LoginViewModel>();
             SimpleIoc.Default.Register<ManageGroupMessageViewModel>();
+            SimpleIoc.Default.Register<AddEditGroupMessageViewModel>();
         }
 
         public LoginViewModel Login
@@ -27,6 +28,14 @@ namespace SmartSchoolApp.Services
             get
             {
                 return SimpleIoc.Default.GetInstance<ManageGroupMessageViewModel>();
+            }
+        }
+
+        public AddEditGroupMessageViewModel AddEditGroupMessage
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<AddEditGroupMessageViewModel>();
             }
         }
 
