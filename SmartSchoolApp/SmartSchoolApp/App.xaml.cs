@@ -31,7 +31,7 @@ namespace SmartSchoolApp
 
             SetupService();
 
-            MainPage = new MainPage();
+            MainPage = new GalleryPage();
         }
 
         public void SetupService()

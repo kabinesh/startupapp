@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SmartSchoolApp.Models
 {
-   public class Event
+    public class Event
     {
         public int Id { get; set; }
 
@@ -13,5 +13,9 @@ namespace SmartSchoolApp.Models
         public string Photo { get; set; }
 
         public string Description { get; set; }
+
+        public int ImageCount { get; set; }
+
+        public string Date { get; set; }
     }
 }

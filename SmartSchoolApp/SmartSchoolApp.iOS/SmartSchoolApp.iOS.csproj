@@ -136,6 +136,18 @@
     <ImageAsset Include="Assets.xcassets\GoogleLogo.png.imageset\GoogleLogo.png" />
     <ImageAsset Include="Assets.xcassets\GoogleLogo.png.imageset\GoogleLogo-1.png" />
     <ImageAsset Include="Assets.xcassets\GoogleLogo.png.imageset\GoogleLogo-2.png" />
+    <ImageAsset Include="Assets.xcassets\Image1.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Image1.png.imageset\image1.jpg" />
+    <ImageAsset Include="Assets.xcassets\Image1.png.imageset\image1-1.jpg" />
+    <ImageAsset Include="Assets.xcassets\Image1.png.imageset\image1-2.jpg" />
+    <ImageAsset Include="Assets.xcassets\image2.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\image2.png.imageset\image2.jpg" />
+    <ImageAsset Include="Assets.xcassets\image2.png.imageset\image2-1.jpg" />
+    <ImageAsset Include="Assets.xcassets\image2.png.imageset\image2-2.jpg" />
+    <ImageAsset Include="Assets.xcassets\Image3.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Image3.png.imageset\image3.jpg" />
+    <ImageAsset Include="Assets.xcassets\Image3.png.imageset\image3-1.jpg" />
+    <ImageAsset Include="Assets.xcassets\Image3.png.imageset\image3-2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -182,5 +194,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\GoogleLogo.png.imageset\" />
+    <Folder Include="Assets.xcassets\Image1.png.imageset\" />
+    <Folder Include="Assets.xcassets\image2.png.imageset\" />
+    <Folder Include="Assets.xcassets\Image3.png.imageset\" />
   </ItemGroup>
 </Project>

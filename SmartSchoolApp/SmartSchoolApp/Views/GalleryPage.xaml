@@ -1,11 +1,245 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Event Gallery"
              xmlns:flv= "clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              xmlns:local="clr-namespace:SmartSchoolApp.CustomViews"
+             xmlns:dataTemplate="clr-namespace:SmartSchoolApp.Views"
              x:Class="SmartSchoolApp.Views.GalleryPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="SingleImageTempate">
+                <ViewCell>
+                    <Frame Style="{StaticResource GroupMessageBorder}">
+                        <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" Style="{StaticResource GroupMessageHeaderGrid}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
+                                    <StackLayout Grid.Column="1">
+                                        <Label Text="{Binding Name}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
+                                        <Label Text="{Binding Date}" TextColor="White"/>
+                                    </StackLayout>
+                                </Grid>
+                                <Image Source="Image1.png" Grid.Row="1" Style="{StaticResource GalleryImage}"/>
+                                <Label Text="{Binding Description}" Style="{StaticResource GalleryShortDescription}" Grid.Row="2"/>
+                        </Grid>                        
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="TwoImageTemplate">
+                <ViewCell>
+                    <Frame Style="{StaticResource GroupMessageBorder}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Style="{StaticResource GroupMessageHeaderGrid}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
+                                <StackLayout Grid.Column="1">
+                                    <Label Text="{Binding Name}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
+                                    <Label Text="{Binding Date}" TextColor="White"/>
+                                </StackLayout>
+                            </Grid>
+                            
+                            <Grid Style="{StaticResource GalleryGrid}" Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Column="0"/>
+                                <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Column="1"/>
+                            </Grid>
+                            <Label Text="{Binding Description}" Style="{StaticResource GalleryShortDescription}" Grid.Row="2"/>
+                        </Grid>                        
+                    </Frame>
+                    
+                </ViewCell>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="ThreeImageTemplate">
+                <ViewCell>
+                    <Frame Style="{StaticResource GroupMessageBorder}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Style="{StaticResource GroupMessageHeaderGrid}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
+                                <StackLayout Grid.Column="1">
+                                    <Label Text="{Binding Name}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
+                                    <Label Text="{Binding Date}" TextColor="White"/>
+                                </StackLayout>
+                            </Grid>
+                            <Grid Style="{StaticResource GalleryGrid}" Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Column="0"/>
+                                
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    
+                                    <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Row="0"/>
+                                    <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Row="1"/>
+                                </Grid>
+                            </Grid>
+                            <Label Text="{Binding Description}" Style="{StaticResource GalleryShortDescription}" Grid.Row="2"/>
+                        </Grid>                        
+                    </Frame>
+                    
+                </ViewCell>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="FourImageTemplate">
+                <ViewCell>
+                    <Frame Style="{StaticResource GroupMessageBorder}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Style="{StaticResource GroupMessageHeaderGrid}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
+                                <StackLayout Grid.Column="1">
+                                    <Label Text="{Binding Name}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
+                                    <Label Text="{Binding Date}" TextColor="White"/>
+                                </StackLayout>
+                            </Grid>
+                            <Grid Style="{StaticResource GalleryGrid}" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Row="0" Grid.Column="0"/>
+                                <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Row="0" Grid.Column="1"/>
+                                <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Row="1" Grid.Column="0"/>
+                                <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Row="1" Grid.Column="1"/>                               
+                            </Grid>
+                             <Label Text="{Binding Description}" Style="{StaticResource GalleryShortDescription}" Grid.Row="2"/>
+                        </Grid>                        
+                    </Frame>
+                    
+                </ViewCell>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="FiveImageTemplate">
+                <ViewCell>
+                    <Frame Style="{StaticResource GroupMessageBorder}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Style="{StaticResource GroupMessageHeaderGrid}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
+                                <StackLayout Grid.Column="1">
+                                    <Label Text="{Binding Name}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
+                                    <Label Text="{Binding Date}" TextColor="White"/>
+                                </StackLayout>
+                            </Grid>
+                            <Grid Style="{StaticResource GalleryGrid}" Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Row="0"/>
+                                    <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Row="1"/>
+                                </Grid>
+                                
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Row="0"/>
+                                    <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Row="1"/>
+                                    <Image Source="Image1.png" Style="{StaticResource GalleryImage}" Grid.Row="2"/>
+                                </Grid>                                
+                            </Grid>
+                            <Label Text="{Binding Description}" Style="{StaticResource GalleryShortDescription}" Grid.Row="2"/>
+                        </Grid>                        
+                    </Frame>
+
+                </ViewCell>
+            </DataTemplate>
+            
+            <dataTemplate:GalleryDataTemplateSelector x:Key="galleryDataTemplateSelector"
+                                                      SingleImageTemplate="{StaticResource SingleImageTempate}"
+                                                      TwoImageTemplate="{StaticResource TwoImageTemplate}"
+                                                      ThreeImageTemplate="{StaticResource ThreeImageTemplate}"
+                                                      FourImageTemplate="{StaticResource FourImageTemplate}"
+                                                      FiveImageTemplate="{StaticResource FiveImageTemplate}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
     <ContentPage.Content>
+        
+        <StackLayout>
+            <ListView SeparatorColor="Green" HasUnevenRows="true" ItemTemplate="{StaticResource galleryDataTemplateSelector}" ItemsSource="{Binding EventsGallery}" />
+            
+        </StackLayout>
+        
         <!--<local:CustomListView ItemsSource="{Binding EventsGallery}" ItemClickCommand="{Binding ItemClickCommand}"  SelectedItem="{Binding SelectedEvent}" HasUnevenRows="True" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -28,7 +262,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </local:CustomListView>-->
-        <flv:FlowListView
+        <!--<flv:FlowListView
                     FlowItemsSource="{Binding EventsGallery} "
                     FlowColumnCount="3" 
                     FlowColumnExpand="First"
@@ -46,6 +280,6 @@
                     </Grid>
                 </DataTemplate>
             </flv:FlowListView.FlowColumnTemplate>
-        </flv:FlowListView >
+        </flv:FlowListView >-->
     </ContentPage.Content>
 </ContentPage>
