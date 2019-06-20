@@ -20,16 +20,9 @@ namespace SmartSchoolApp.Views.Admin
             BindingContext = App.Locator.ManageGroupMessage;
         }
 
-        private async void NavigateToAddGropMessageView(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-            await Navigation.PushAsync(new AddOrEditGroupMessage());
-        }
-
-        private async void NavigateToEditGropMessageView(object sender, EventArgs e)
-        {
-            var message = (sender as MenuItem).CommandParameter as Models.GroupMessage;
-            await Navigation.PushAsync(new AddOrEditGroupMessage());
-
+            base.OnAppearing();
         }
 
         private void DeleteGroupMessage(object sender, EventArgs e)

@@ -5,7 +5,7 @@
              x:Name="ManageGroupMessagesPage"
              Title="Manage Group Messages">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Activated="NavigateToAddGropMessageView"/>
+        <ToolbarItem Text="Add" Command="{Binding NavigateToAddMessageView}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
     <StackLayout Style="{StaticResource Wrapper}">
@@ -37,7 +37,7 @@
                             </Frame>
                             <ViewCell.ContextActions>
                                 <MenuItem Text="Edit" CommandParameter="{Binding .}" Command="{Binding BindingContext.NavigateToEditGropMessageView, Source={x:Reference Name=ManageGroupMessagesPage}}"/>
-                                <MenuItem Text="Delete" CommandParameter="{Binding .}" Command="{Binding DeleteGroupMessage}" IsDestructive="True"/>
+                                <MenuItem Text="Delete" CommandParameter="{Binding .}" Command="{Binding BindingContext.DeleteGroupMessage, Source={x:Reference Name=ManageGroupMessagesPage}}" IsDestructive="True"/>
                             </ViewCell.ContextActions>
                         </ViewCell>
                     </DataTemplate>

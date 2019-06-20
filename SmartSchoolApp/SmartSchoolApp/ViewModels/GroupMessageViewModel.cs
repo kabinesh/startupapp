@@ -1,4 +1,5 @@
-﻿using SmartSchoolApp.Interface;
+﻿using GalaSoft.MvvmLight;
+using SmartSchoolApp.Interface;
 using SmartSchoolApp.Models;
 using SmartSchoolApp.Services;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SmartSchoolApp.ViewModels
 {
-    public class GroupMessageViewModel : INotifyPropertyChanged
+    public class GroupMessageViewModel : ViewModelBase, INotifyPropertyChanged
     {
         private GroupMessageService groupMessageService;
         private IRestApi restApi;
@@ -36,10 +37,10 @@ namespace SmartSchoolApp.ViewModels
         {
             groupMessageService = new GroupMessageService();
             restApi = App.RestApiService;
-            GetGroupMessages();
+            UpdateGroupMessageList();
         }
 
-        private async Task GetGroupMessages()
+        public async Task UpdateGroupMessageList()
         {
             try
             {

@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
 using SmartSchoolApp.ViewModels;
 using System;
 using System.Collections.Generic;

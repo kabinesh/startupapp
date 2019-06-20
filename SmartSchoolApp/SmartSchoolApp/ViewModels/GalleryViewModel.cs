@@ -16,7 +16,7 @@ namespace SmartSchoolApp.ViewModels
         INavigation _navigation;
         public GalleryViewModel(INavigation navigation)
         {
-            _navigation= navigation;
+            _navigation = navigation;
 
             EventsGallery = new ObservableCollection<Event>
             {
@@ -56,9 +56,17 @@ namespace SmartSchoolApp.ViewModels
         {
             get
             {
-                return new Command((obj) => {
-                    var currentevent=new Event { Id = 1, Name = "Playing", Date = "11 Mar 2019", ImageCount = 1, Photo = "image1.jpg", Description = "Visit to Kuttralam - with all the students and parents",
-                        Images=new List<string> {"image1.jpg","image2.jpg","image3.jpg" }
+                return new Command((obj) =>
+                {
+                    var currentevent = new Event
+                    {
+                        Id = 1,
+                        Name = "Playing",
+                        Date = "11 Mar 2019",
+                        ImageCount = 1,
+                        Photo = "image1.png",
+                        Description = "Visit to Kuttralam - with all the students and parents",
+                        Images = new List<string> { "image1.png", "image2.png", "image3.png" }
                     };
                     _navigation.PushAsync(new ImageCarouselPage(currentevent));
                 });

@@ -10,14 +10,14 @@ using Xamarin.Forms.Xaml;
 
 namespace SmartSchoolApp.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class GroupMessage : ContentPage
-	{
-		public GroupMessage ()
-		{
-			InitializeComponent ();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class GroupMessage : ContentPage
+    {
+        public GroupMessage()
+        {
+            InitializeComponent();
 
             BindingContext = new GroupMessageViewModel();
-		}
-	}
+        }
+    }
 }

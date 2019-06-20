@@ -23,5 +23,12 @@ namespace SmartSchoolApp.Interface
 
         [Post("/post/add")]
         Task<GroupMessageResponse> SaveGroupMessage([Body] GroupMessage groupMessage);
+
+        [Post("/post/edit")]
+        Task<GroupMessageResponse> UpdateGroupMessage([Body] GroupMessage groupMessage);
+
+        [Post("/post/delete")]
+        Task<GroupMessageResponse> DeleteGroupMessage([Body] GroupMessage groupMessage);
+
     }
 }
