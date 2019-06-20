@@ -25,11 +25,11 @@
 
                                     <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
                                     <StackLayout Grid.Column="1">
-                                        <Label Text="{Binding Name}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
-                                        <Label Text="{Binding Date}" TextColor="White"/>
+                                        <Label Text="{Binding Msg}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
+                                        <Label Text="{Binding EventOn}" TextColor="White"/>
                                     </StackLayout>
                                 </Grid>
-                                <Image Source="image1.png" Grid.Row="1" Style="{StaticResource GalleryImage}">
+                                <Image Source="{Binding FirstImage}" Grid.Row="1" Style="{StaticResource GalleryImage}">
                                     <Image.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding BindingContext.CarouselCommand,Source={x:Reference galleryPage}}" CommandParameter="{Binding .}"/>
                                     </Image.GestureRecognizers>
@@ -58,8 +58,8 @@
 
                                 <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
                                 <StackLayout Grid.Column="1">
-                                    <Label Text="{Binding Name}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
-                                    <Label Text="{Binding Date}" TextColor="White"/>
+                                    <Label Text="{Binding Msg}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
+                                    <Label Text="{Binding EventOn}" TextColor="White"/>
                                 </StackLayout>
                             </Grid>
                             
@@ -69,8 +69,8 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 
-                                <Image Source="image1.png" Style="{StaticResource GalleryImage}" Grid.Column="0"/>
-                                <Image Source="image1.png" Style="{StaticResource GalleryImage}" Grid.Column="1"/>
+                                <Image Source="{Binding FirstImage}" Style="{StaticResource GalleryImage}" Grid.Column="0"/>
+                                <Image Source="{Binding SecondImage}" Style="{StaticResource GalleryImage}" Grid.Column="1"/>
                                 <Grid.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding BindingContext.CarouselCommand,Source={x:Reference galleryPage}}" CommandParameter="{Binding .}"/>
                                 </Grid.GestureRecognizers>
@@ -100,8 +100,8 @@
 
                                 <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
                                 <StackLayout Grid.Column="1">
-                                    <Label Text="{Binding Name}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
-                                    <Label Text="{Binding Date}" TextColor="White"/>
+                                    <Label Text="{Binding Msg}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
+                                    <Label Text="{Binding EventOn}" TextColor="White"/>
                                 </StackLayout>
                             </Grid>
                             <Grid Style="{StaticResource GalleryGrid}" Grid.Row="1">
@@ -109,17 +109,17 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                
-                                <Image Source="image1.png" Style="{StaticResource GalleryImage}" Grid.Column="0"/>
+
+                                <Image Source="{Binding FirstImage}" Style="{StaticResource GalleryImage}" Grid.Column="0"/>
                                 
                                 <Grid Grid.Column="1">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    
-                                    <Image Source="image1.png.jpg" Style="{StaticResource GalleryImage}" Grid.Row="0"/>
-                                    <Image Source="image1.png.jpg" Style="{StaticResource GalleryImage}" Grid.Row="1"/>
+
+                                    <Image Source="{Binding SecondImage}" Style="{StaticResource GalleryImage}" Grid.Row="0"/>
+                                    <Image Source="{Binding ThirdImage}" Style="{StaticResource GalleryImage}" Grid.Row="1"/>
                                 </Grid>
                                 <Grid.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding BindingContext.CarouselCommand,Source={x:Reference galleryPage}}" CommandParameter="{Binding .}"/>
@@ -150,8 +150,8 @@
 
                                 <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
                                 <StackLayout Grid.Column="1">
-                                    <Label Text="{Binding Name}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
-                                    <Label Text="{Binding Date}" TextColor="White"/>
+                                    <Label Text="{Binding Msg}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
+                                    <Label Text="{Binding EventOn}" TextColor="White"/>
                                 </StackLayout>
                             </Grid>
                             <Grid Style="{StaticResource GalleryGrid}" Grid.Row="1">
@@ -164,11 +164,11 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                
-                                <Image Source="image1.png" Style="{StaticResource GalleryImage}" Grid.Row="0" Grid.Column="0"/>
-                                <Image Source="image1.png" Style="{StaticResource GalleryImage}" Grid.Row="0" Grid.Column="1"/>
-                                <Image Source="image1.png" Style="{StaticResource GalleryImage}" Grid.Row="1" Grid.Column="0"/>
-                                <Image Source="image1.png" Style="{StaticResource GalleryImage}" Grid.Row="1" Grid.Column="1"/>
+
+                                <Image Source="{Binding FirstImage}" Style="{StaticResource GalleryImage}" Grid.Row="0" Grid.Column="0"/>
+                                <Image Source="{Binding SecondImage}" Style="{StaticResource GalleryImage}" Grid.Row="0" Grid.Column="1"/>
+                                <Image Source="{Binding ThirdImage}" Style="{StaticResource GalleryImage}" Grid.Row="1" Grid.Column="0"/>
+                                <Image Source="{Binding FourthImage}" Style="{StaticResource GalleryImage}" Grid.Row="1" Grid.Column="1"/>
                                 <Grid.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding BindingContext.CarouselCommand,Source={x:Reference galleryPage}}" CommandParameter="{Binding .}"/>
                                 </Grid.GestureRecognizers>
@@ -198,8 +198,8 @@
 
                                 <Image Source="GoogleLogo.png" WidthRequest="40" Grid.Column="0"/>
                                 <StackLayout Grid.Column="1">
-                                    <Label Text="{Binding Name}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
-                                    <Label Text="{Binding Date}" TextColor="White"/>
+                                    <Label Text="{Binding Msg}" FontFamily="{StaticResource SemiBoldFont}" TextColor="White" ></Label>
+                                    <Label Text="{Binding EventOn}" TextColor="White"/>
                                 </StackLayout>
                             </Grid>
                             <Grid Style="{StaticResource GalleryGrid}" Grid.Row="1">
@@ -213,8 +213,8 @@
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    <Image Source="image1.png" Style="{StaticResource GalleryImage}" Grid.Row="0"/>
-                                    <Image Source="image1.png" Style="{StaticResource GalleryImage}" Grid.Row="1"/>
+                                    <Image Source="{Binding FirstImage}" Style="{StaticResource GalleryImage}" Grid.Row="0"/>
+                                    <Image Source="{Binding SecondImage}" Style="{StaticResource GalleryImage}" Grid.Row="1"/>
                                 </Grid>
                                 
                                 <Grid Grid.Column="1">
@@ -223,9 +223,9 @@
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    <Image Source="image1.png" Style="{StaticResource GalleryImage}" Grid.Row="0"/>
-                                    <Image Source="image1.png" Style="{StaticResource GalleryImage}" Grid.Row="1"/>
-                                    <Image Source="image1.png" Style="{StaticResource GalleryImage}" Grid.Row="2"/>
+                                    <Image Source="{Binding ThirdImage}" Style="{StaticResource GalleryImage}" Grid.Row="0"/>
+                                    <Image Source="{Binding FourthImage}" Style="{StaticResource GalleryImage}" Grid.Row="1"/>
+                                    <Image Source="{Binding FifthImage}" Style="{StaticResource GalleryImage}" Grid.Row="2"/>
                                 </Grid>
                                 <Grid.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding BindingContext.CarouselCommand,Source={x:Reference galleryPage}}" CommandParameter="{Binding .}"/>
@@ -250,7 +250,7 @@
     
     <ContentPage.Content>
 
-        <local:CustomListView SeparatorVisibility="None" HasUnevenRows="true" ItemTemplate="{StaticResource galleryDataTemplateSelector}" ItemsSource="{Binding EventsGallery}" />
+        <ListView SeparatorVisibility="None" HasUnevenRows="true" ItemTemplate="{StaticResource galleryDataTemplateSelector}" ItemsSource="{Binding EventsGallery}" />
             
     </ContentPage.Content>
 </ContentPage>

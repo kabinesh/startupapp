@@ -18,8 +18,7 @@ namespace SmartSchoolApp.Views
 		{
 			InitializeComponent ();
 
-            Title = currentEvent.Name;
-            this.
+            Title = currentEvent.Msg;
             SetCarouselPages(currentEvent);
            
 		}
@@ -27,11 +26,11 @@ namespace SmartSchoolApp.Views
         void SetCarouselPages(Event currentEvent)
         {
 
-            foreach(var image in currentEvent.Images)
+            foreach(var image in currentEvent.ImgUrl)
             {
                 var contentPage = new ContentPage();
 
-                contentPage.Content = new Image { Source = image, HorizontalOptions = LayoutOptions.CenterAndExpand, VerticalOptions = LayoutOptions.CenterAndExpand, Aspect = Aspect.AspectFit };
+                contentPage.Content = new Image { Source = string.Format("{0}{1}",App.BaseUrl, image), HorizontalOptions = LayoutOptions.CenterAndExpand, VerticalOptions = LayoutOptions.CenterAndExpand, Aspect = Aspect.AspectFit };
 
                 this.Children.Add(contentPage);
             }

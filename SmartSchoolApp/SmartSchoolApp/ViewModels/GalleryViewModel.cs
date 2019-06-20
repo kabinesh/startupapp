@@ -1,4 +1,6 @@
-﻿using Rg.Plugins.Popup.Services;
+﻿using Acr.UserDialogs;
+using Rg.Plugins.Popup.Services;
+using SmartSchoolApp.Interface;
 using SmartSchoolApp.Models;
 using SmartSchoolApp.Views;
 using SmartSchoolApp.Views.Popup;
@@ -6,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -14,21 +17,43 @@ namespace SmartSchoolApp.ViewModels
     public class GalleryViewModel : BaseViewModel
     {
         INavigation _navigation;
+
+        IRestApi _restApi;
+
         public GalleryViewModel(INavigation navigation)
         {
             _navigation = navigation;
 
-            EventsGallery = new ObservableCollection<Event>
+            _restApi = App.RestApiService;
+
+            EventsGallery = new ObservableCollection<Event>();
+
+            GetEventsGalleryAsync();
+           
+        }
+
+        private async Task GetEventsGalleryAsync()
+        {
+
+            try
             {
-                new Event{ Id =1 , Name="Playing", Date="11 Mar 2019", ImageCount=1, Photo="image1.jpg", Description="Visit to Kuttralam - with all the students and parents" },
-                new Event{ Id =2 , Name="Writing", Date="11 Mar 2019", ImageCount=2, Photo="image2.jpg", Description="Visit to Kuttralam - with all the students and parents"},
-                new Event{ Id =1 , Name="Playing", Date="11 Mar 2019", ImageCount=3, Photo="image3.jpg", Description="Visit to Kuttralam - with all the students and parents"},
-                new Event{ Id =2 , Name="Writing", Date="11 Mar 2019", ImageCount=4, Photo="image4.jpg", Description="Visit to Kuttralam - with all the students and parents"},
-                new Event{ Id =1 , Name="Playing", Date="11 Mar 2019", ImageCount=5, Photo="image5.jpg", Description="Visit to Kuttralam - with all the students and parents"},
-                new Event{ Id =2 , Name="Writing", Date="11 Mar 2019", ImageCount=1, Photo="image2.jpg", Description="Visit to Kuttralam - with all the students and parents"},
-                new Event{ Id =2 , Name="Writing", Date="11 Mar 2019", ImageCount=1, Photo="image4.jpg", Description="Visit to Kuttralam - with all the students and parents"},
-                new Event{ Id =1 , Name="Playing", Date="11 Mar 2019", ImageCount=1, Photo="image5.jpg", Description="Visit to Kuttralam - with all the students and parents"},
-            };
+                UserDialogs.Instance.ShowLoading("Loading");
+
+                var response = await _restApi.GetEventsGallery();
+
+                if (response != null)
+                {
+                    EventsGallery = new ObservableCollection<Event>(response.GalleryDetails);
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                UserDialogs.Instance.HideLoading();
+            }
         }
 
         public ObservableCollection<Event> EventsGallery
@@ -58,17 +83,7 @@ namespace SmartSchoolApp.ViewModels
             {
                 return new Command((obj) =>
                 {
-                    var currentevent = new Event
-                    {
-                        Id = 1,
-                        Name = "Playing",
-                        Date = "11 Mar 2019",
-                        ImageCount = 1,
-                        Photo = "image1.png",
-                        Description = "Visit to Kuttralam - with all the students and parents",
-                        Images = new List<string> { "image1.png", "image2.png", "image3.png" }
-                    };
-                    _navigation.PushAsync(new ImageCarouselPage(currentevent));
+                    _navigation.PushAsync(new ImageCarouselPage((Event)obj));
                 });
             }
         }

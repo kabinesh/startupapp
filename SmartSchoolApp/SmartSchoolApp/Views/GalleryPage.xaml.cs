@@ -19,5 +19,6 @@ namespace SmartSchoolApp.Views
 
             BindingContext = new GalleryViewModel(this.Navigation);
         }
+
     }
 }

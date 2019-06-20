@@ -30,5 +30,8 @@ namespace SmartSchoolApp.Interface
         [Post("/post/delete")]
         Task<GroupMessageResponse> DeleteGroupMessage([Body] GroupMessage groupMessage);
 
+        [Get("/gallery/get?AuthToken=dj3ku5rn")]
+        Task<EventsGalleryResponse> GetEventsGallery();
+
     }
 }

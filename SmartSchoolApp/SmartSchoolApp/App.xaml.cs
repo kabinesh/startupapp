@@ -16,7 +16,7 @@ namespace SmartSchoolApp
 {
     public partial class App : Application
     {
-        private static readonly string baseUrl = "http://sms.shanehospitalfurniture.com";
+        public static readonly string BaseUrl = "http://sms.shanehospitalfurniture.com";
 
         public static IRestApi RestApiService { get; private set; }
 
@@ -38,7 +38,7 @@ namespace SmartSchoolApp
         {
             var httpClient = new HttpClient(new AuthenticatedHttpClientHandler())
             {
-                BaseAddress = new Uri(baseUrl), //Todo need to update api url here.
+                BaseAddress = new Uri(BaseUrl), //Todo need to update api url here.
                 Timeout = TimeSpan.FromSeconds(60)
             };
 
